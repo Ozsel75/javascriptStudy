@@ -25,3 +25,6 @@ ekle.addEventListener("click",function(){
   // Veri inputu içerisindeki metni siliyoruz.
   veri.value = "";
 });
+
+
+var randomSayi = Math.floor(Math.random() * 10); // random sayı 1-10 arasında

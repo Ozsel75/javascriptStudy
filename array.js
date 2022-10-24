@@ -17,6 +17,11 @@ Slice (dilimleme) metodu bir dizinin bir kısmının kopyasıyla yeni bir dizi o
 Parantez içerisine ise kopyalamak istediğimiz elemanların aralığını başlangıç ve bitiş indeksleri olacak şekilde iki parametre olarak giriyoruz. Bitiş indeksindeki değerin aralığa dahil olmadığını unutmayalım.
 Bu metot uygulandığı dizinin orijinal halini değiştirmiyor bu yüzden yeni oluşacak diziyi farklı bir değişkende saklıyoruz.
 
+/* ES6 KOPYALAMA 
+
+let es6items = [...items]    ... ile
+let es6merge = [...items, ...items]   birden fazla array i birleştirmek
+
 join()
 Bazen Dizi içerisinde topladığınız verileri, string (sözdizimi) olarak yazdırmak isteyebilirsiniz. Join metodu bu konuda yardıma yetişiyor.
 Parantez içerisine dizi elemanları arasına koymak istediğimiz string'i parametre olarak girebiliriz. Eğer bir parametre vermezsek virgül bastırır.
@@ -88,3 +93,43 @@ Bu metot orijinal diziyi değiştirmez. (Mutate etmez.)
 Tam olarak ne yaptığını anlamak için örnekleri inceleyelim.
 
 */ 
+
+//Pekiştirme Soruları
+//1.Soru
+
+let dizi = [2,5,8,11,15,17];
+
+// Uygun dizi metotlarını kullanarak  yukarıda verilen dizinin elemanları içinde 10'dan büyük olan elemanların 5'er katından oluşan yeni bir dizi oluşturun. (sonuç [55, 75, 85] olmalı.)
+let diziOn = dizi.filter( sayi => sayi > 10); 
+let diziOnV = diziOn.map(sayi => sayi*5);
+
+console.log(diziOnv);
+
+2.Soru
+
+let dizi = [3,6,9,14,16];
+
+// Uygun dizi metotlarını kullanarak, yukarıdaki dizi için aşağıdaki şartları sağlayan myFunction fonksiyonunu yazın.
+// Elemanların arasında 5'ten büyük olan olan bir eleman varsa konsola "Beşten büyük bir eleman mevcut." yoksa "5'ten büyük eleman mevcut değil." yazdır.
+
+function myFunction (dizi){
+// Kodunuzu buraya yazın.
+let soruiki = dizi.find(sayiİki => sayiİki > 5);
+if (soruiki){
+    console.log("Beşten büyük bir eleman mevcut");
+} else {
+    console.log("5'ten büyük eleman mevcut değil.");
+}
+}
+
+3. Soru
+
+let dizi3 = [2,3,4];
+
+// Uygun dizi metodunu kullanarak yukarıda verilen dizinin elemanlarının çarpımının sonucunu (24) veren bir fonksiyon yazınız.
+function indirgeyici (akumulator, sayi3) {
+    return akumulator * sayi3;
+}
+const sonuc3 = dizi3.reduce(indirgeyici,1);
+
+console.log(sonuc3);
